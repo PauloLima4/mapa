@@ -27,3 +27,20 @@ button {
   cursor: pointer;
   transition: all 0.3s ease;
 }
+
+button:hover:not(:disabled) {
+  background-color: #1a5bb8;
+  transform: scale(1.05);
+  color: white;
+}
+
+/* Animação ao clicar */
+button:active:not(:disabled) {
+  background-color: #0f3c75;
+  transform: scale(0.97);
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}

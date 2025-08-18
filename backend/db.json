@@ -2,27 +2,27 @@
   "empreendedores": [
     {
       "id": 1,
-      "nome": "KR Multimarcas",
-      "categoria": "Loja",
-      "produto": "Vestuário Feminino",
-      "descricao": "Loja de moda feminina",
-      "imagem": "https://upload.wikimedia.org/wikipedia/en/thumb/e/e2/IMG_Academy_Logo.svg/1200px-IMG_Academy_Logo.svg.png", 
-      "lat": -39.450693825226196,
-      "lng": -4.042718079905024,
-      "endereco": "Rua José Felix, 583",
-      "contato": {
-        "telefone": "085985205912",
-        "email": "contato@paoquente.com",
-        "whatsapp": "085985205912",
-        "instagram": "kr_multimarcas"
-      },
-      "horario": "Seg-Sáb 6h às 18h",
-      "atendimento": "fisico, online",
-      "lojaVirtual": "",
-      "fotosExtras": [
-        "https://via.placeholder.com/400x300.png?text=Produto+1",
-        "https://via.placeholder.com/400x300.png?text=Produto+2"
-      ]
+      "nome": "Maria Silva",
+      "cnpj": "12.345.678/0001-90",
+      "telefone": "(11) 98765-4321",
+      "endereco": "Rua das Flores, 123 - São Paulo/SP",
+      "tipo": "Loja de Roupas"
+    },
+    {
+      "id": 2,
+      "nome": "João Oliveira",
+      "cnpj": "98.765.432/0001-12",
+      "telefone": "(21) 99876-5432",
+      "endereco": "Av. Atlântica, 456 - Rio de Janeiro/RJ",
+      "tipo": "Restaurante"
+    },
+    {
+      "id": 3,
+      "nome": "Ana Costa",
+      "cnpj": "55.111.222/0001-55",
+      "telefone": "(31) 91234-5678",
+      "endereco": "Praça Sete, 789 - Belo Horizonte/MG",
+      "tipo": "Academia"
     }
   ]
 }

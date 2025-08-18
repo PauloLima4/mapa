@@ -29,7 +29,7 @@ header{
     justify-content: space-between; /* título à esquerda, botão à direita */
     align-items: center;
     padding: 10px 20px;
-    background-color: #4e99ef;
+    background-color: #2d89ef;
     color: white;
     height: 12vh;
 }
@@ -38,6 +38,7 @@ input[type="text"],
 input[type="file"],
 input[type="email"],
 input[type="time"],
+input[type="url"],
 textarea,
 select {
   width: 97%;
@@ -66,7 +67,6 @@ select:focus {
   border: 1px solid #ccc;
 }
 
-/* Botão estilizado */
 button {
   padding: 10px;
   background-color: white;
@@ -78,7 +78,6 @@ button {
   transition: all 0.3s ease;
 }
 
-/* Animação no hover */
 button:hover:not(:disabled) {
   background-color: #1a5bb8;
   transform: scale(1.05);
@@ -118,6 +117,7 @@ button[type="submit"] {
   border-radius: 8px; 
   font-size: 1rem; 
   font-weight: bold;
+  width: 100%;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.2s;
   margin-top: 10px;

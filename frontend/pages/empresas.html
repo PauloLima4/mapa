@@ -4,56 +4,59 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Lista de Empresas</title>
+  <link rel="icon" href="../../public/img/LogoGeneral.png" type="image/x-icon">
   <link rel="stylesheet" href="../css/empresas.css" />
 </head>
 <body>
   <header>
     <h1>Lista de Empresas Cadastradas</h1>
-    <button onclick="window.location.href='../index.html'">Voltar para o Mapa</button>
+    <button type="button" onclick="window.location.href='../index.html'">Voltar para o Mapa</button>
   </header>
 
   <main>
-    <section id="cards"></section>
+    <section id="cards">
+      <p>Carregando empresas...</p>
+    </section>
   </main>
 
   <script>
-    // Carrega lista de empresas via API e cria os cards
-    const params = new URLSearchParams(window.location.search);
-    const id = params.get("id")
-    
+    const cardsContainer = document.getElementById("cards");
+
     fetch("/api/empreendedores")
-      .then(data => {
-        const cardsContainer = document.getElementById("cards");
+      .then(response => {
+        if (!response.ok) throw new Error("Erro na resposta da API");
+        return response.json();
+      })
+      .then(empresas => {
         cardsContainer.innerHTML = "";
 
-        if(data.length === 0) {
+        if (!Array.isArray(empresas) || empresas.length === 0) {
           cardsContainer.innerHTML = "<p>Nenhuma empresa cadastrada.</p>";
           return;
         }
 
-        data.forEach(emp => {
+        empresas.forEach(emp => {
           const card = document.createElement("div");
           card.classList.add("card");
           card.innerHTML = `
-            <img src="${emp.imagem}" alt="${emp.nome}" />
+            <img src="${emp.imagem || 'img/default.png'}" alt="${emp.nome}" />
             <div class="card-content">
               <h3>${emp.nome}</h3>
-              <p>${emp.produto}</p>
+              <p>${emp.produto || 'Não informado'}</p>
               <p><strong>Categoria:</strong> ${emp.categoria || 'Não informado'}</p>
               <p><strong>Atendimento:</strong> ${emp.atendimento || 'Não informado'}</p>
             </div>
           `;
 
           card.style.cursor = "pointer";
-          card.onclick = () => {
-            // Vai para a página detalhada da empresa
-            window.location.href = `negocio.html?id=${emp.id}`;
-          };
-
+          card.onclick = () => window.location.href = `negocio.html?id=${emp.id}`;
           cardsContainer.appendChild(card);
         });
       })
-      .catch(err => alert(err.message))
+      .catch(err => {
+        console.error("Erro ao carregar empresas:", err);
+        cardsContainer.innerHTML = "<p>Erro ao carregar as empresas.</p>";
+      });
   </script>
 </body>
 </html>
