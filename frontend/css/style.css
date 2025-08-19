@@ -1,0 +1,124 @@
+/* Reset e fonte */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f0f2f5;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+header {
+  background: #1e90ff;
+  color: #fff;
+  padding: 20px 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+h1 {
+  font-size: 26px;
+  margin: 0;
+  flex: 1 1 100%;
+  text-align: center;
+}
+
+/* Controles */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  flex: 1 1 100%;
+}
+
+.item {
+  background: #fff;
+  color: #333;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.item:hover {
+  background: #e6e6e6;
+  transform: scale(1.03);
+}
+
+.item:active {
+  background: #0f3c75;
+  color: #fff;
+  transform: scale(0.98);
+}
+
+/* Main e mapa */
+main {
+  flex: 1; /* ocupa todo o espaço restante da tela */
+  display: flex;
+  flex-direction: column;
+}
+
+#map {
+  flex: 1; /* faz o mapa preencher o main inteiro */
+  width: 100%;
+}
+
+/* Cards */
+#cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 12px;
+  padding: 12px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+.card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 10px;
+}
+
+.card-content h3 {
+  margin: 0 0 5px 0;
+  font-size: 1.2em;
+}
+
+.card-content p {
+  margin: 3px 0;
+  color: #555;
+  font-size: 0.9em;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 22px;
+  }
+
+  .item {
+    padding: 6px 10px;
+    font-size: 0.9em;
+  }
+}
